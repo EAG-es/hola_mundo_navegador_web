@@ -36,7 +36,9 @@ public class Hola_mundo_navegador_web extends Navegador_web {
                 iniciar(ok);
                 if (ok.es) {
                     Hola_mundo_navegador_web.super.inicial.run(ok, Hola_mundo_navegador_web.class, extra_array[0]);
-                    terminar(ok);
+                    oks ok_fin = new oks();
+                    terminar(ok_fin);
+                    ok.setTxt(ok.getTxt(), ok_fin.getTxt());
                 }
                 return ok.es;
             } catch (Exception e) {
