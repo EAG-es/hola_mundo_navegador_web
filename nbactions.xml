@@ -13,7 +13,7 @@
                 <exec.vmArgs>--module-path .:re/linux: --add-modules javafx.controls,javafx.fxml,javafx.web,javafx.media,javafx.graphics,javafx.base,javafx.swing</exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
                 <exec.appArgs></exec.appArgs>
-                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.mainClass>ingui.javafx.hola_mundo_navegador_web.Hola_mundo_navegador_web</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <exec.workingdir>target</exec.workingdir>
             </properties>
@@ -31,7 +31,7 @@
                 <exec.vmArgs>--module-path .:re/linux: --add-modules javafx.controls,javafx.fxml,javafx.web,javafx.media,javafx.graphics,javafx.base,javafx.swing -agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
                 <exec.appArgs></exec.appArgs>
-                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.mainClass>ingui.javafx.hola_mundo_navegador_web.Hola_mundo_navegador_web</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
                 <exec.workingdir>target</exec.workingdir>
@@ -49,10 +49,47 @@
             <properties>
                 <exec.vmArgs>--module-path .:re/linux: --add-modules javafx.controls,javafx.fxml,javafx.web,javafx.media,javafx.graphics,javafx.base,javafx.swing</exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
-                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.mainClass>ingui.javafx.hola_mundo_navegador_web.Hola_mundo_navegador_web</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <exec.appArgs></exec.appArgs>
                 <exec.workingdir>target</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>build</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+        </action>
+        <action>
+            <actionName>clean</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+        </action>
+        <action>
+            <actionName>rebuild</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
             </properties>
         </action>
     </actions>
